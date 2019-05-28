@@ -26,11 +26,13 @@ $ ng serve
 - ~Setup an email integration to shoot off an email when that logic hits (hold)~
 - ~Generic http post action would be nice when the logic hits (done for slack webhook)~
 - ~Web app: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-apps-part-1/ (done)~
-- Update everything from that session to adjust to what I need (database, naming conventions, API)
+- ~Update everything from that session to adjust to what I need~
+- ~Design front end for MVP (done)~
 - Web app 2: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-web-apps-part-2/
+- Learn how to setup auth0
+- Learn how to use forms and the data
 - Web app 3: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-web-apps-part-3/
 - ~Add twitter bootstrap to make it look nice: https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a (done)~
-- Design front end for MVP (in flight)
 
 # Useful sites
 - Bootstrap padding classes: https://www.jquery-az.com/bootstrap-margin-padding-classes-spacing-explained-5-examples/
