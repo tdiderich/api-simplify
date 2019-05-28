@@ -36,3 +36,4 @@ $ ng serve
 - Bootstrap padding classes: https://www.jquery-az.com/bootstrap-margin-padding-classes-spacing-explained-5-examples/
 - All logic options here when needed: http://jsonlogic.com/operations.html
 - Python self explained: https://medium.com/quick-code/understanding-self-in-python-a3704319e5f0
+- AngularJS docs: https://docs.angularjs.org/api
