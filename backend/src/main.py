@@ -29,6 +29,7 @@ def get_exams():
 
 
 @app.route('/exams', methods=['POST'])
+@requires_auth
 def add_exam():
     # mount exam object
     posted_exam = ExamSchema(only=('title', 'description'))\
@@ -45,3 +46,9 @@ def add_exam():
     new_exam = ExamSchema().dump(exam).data
     session.close()
     return jsonify(new_exam), 201
+
+@app.errorhandler(AuthError)
+def handle_auth_error(ex):
+    response = jsonify(ex.error)
+    response.status_code = ex.status_code
+    return response    

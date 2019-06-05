@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 marshmallow = "*"
+python-jose-cryptodome = "*"
 
 [requires]
 python_version = "2.7"
