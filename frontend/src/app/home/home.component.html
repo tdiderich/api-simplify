@@ -1,27 +1,49 @@
-<div class="container">
+<div class="jumbotron d-flex h-100 p-3 mx-auto flex-column">
+
   <div class="row">
-    <div class="col px-5 py-3">
+    <div class="container d-flex h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover">
+        <h5 class="lead">API Monitoring for Humans</h5>
+      </main>
+    </div>
+
+    <div class="table-primary col px-5 py-3">
+
       <form>
+        <legend>Let's test out an API...</legend>
         <div class="form-group mx-auto px-5">
-          <label for="exampleFormControlTextarea1">API Endpoint</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="name">Name</label>
+          <textarea class="form-control" id="apiEndpoint" rows="1" aria-describedby="nameHelp"></textarea>
+          <small id="nameHelp" class="form-text text-muted">What should we name this for future reference?</small>
         </div>
         <div class="form-group mx-auto px-5">
-          <label for="exampleFormControlTextarea2">Authentication Headers</label>
-          <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+          <label for="apiEndpoint">API Endpoint</label>
+          <textarea class="form-control" id="apiEndpoint" rows="1" aria-describedby="apiEndpointHelp"></textarea>
+          <small id="apiEndpointHelp" class="form-text text-muted">This is the URL for the API. You can use this one as an example for testing: https://community-bitcointy.p.rapidapi.com/convert/1/USD</small>
         </div>
         <div class="form-group mx-auto px-5">
-          <label for="exampleFormControlTextarea3">Parameters</label>
-          <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+          <label for="authHeaders">Authentication Headers</label>
+          <textarea class="form-control" id="authHeaders" rows="1" aria-describedby="authHeadersHelp"></textarea>
+          <!-- <small id="authHeadersHelp" class="form-text text-muted">The Authentication Headers are what we use in the request to Authenticate to the API. You can use these for testing: {"X-RapidAPI-Host": "community-bitcointy.p.rapidapi.com", "X-RapidAPI-Key": "957f841dc2mshd1045a90ddd01acp1de9e8jsn99cfc0c07a06"}</small> -->
         </div>
+
+        <div class="form-group mx-auto px-5">
+          <label for="apiParameters">Parameters</label>
+          <textarea class="form-control" id="apoiParameters" rows="1" aria-describedby="apiParametersHelp"></textarea>
+          <small id="apiParametersHelp" class="form-text text-muted">The parameters are used to specify a query with most API call, but they are not always necessary. Our test example does not require parameters.</small>
+        </div>
+
         <div class="container">
           <div class="row">
             <div class="col text-center">
-              <button class="btn btn-primary">Test API</button>
+              <button type="submit" class="btn btn-primary">Test API</button>
             </div>
           </div>
         </div>
+
       </form>
+
     </div>
   </div>
+
 </div>

@@ -15,7 +15,7 @@ $ ng serve
 # Useful commands
 - Creating a new page...
 ```console
-$ ng generate component hero <name>
+$ ng generate component <name>
 $ ng generate class <name>
 ```
 
@@ -30,7 +30,7 @@ $ ng generate class <name>
 # TODO LIST
 - ~Make it so the user can build the headers with simple inputs (done)~
 - ~Allow for you to write boolean logic agains the fields (done)~
-- ~Setup an email integration to shoot off an email when that logic hits (hold)~
+- Setup an email integration to shoot off an email when that logic hits (hold)
 - ~Generic http post action would be nice when the logic hits (done for slack webhook)~
 - ~Web app: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-apps-part-1/ (done)~
 - ~Update everything from that session to adjust to what I need~
@@ -38,7 +38,7 @@ $ ng generate class <name>
 - ~Add twitter bootstrap to make it look nice: https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a (done)~
 - ~Web app 2: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-web-apps-part-2/ (done)~
 - ~Learn how to setup auth0 (done)~
-- Learn how the different pages work: https://vegibit.com/angularjs-component-tutorial/
+- ~Learn how the different pages work: https://vegibit.com/angularjs-component-tutorial/ (done)~
 - Learn how to use forms and the data
 - API / Entity updates for API Tester
 - Web app 3: https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-web-apps-part-3/
@@ -50,3 +50,4 @@ $ ng generate class <name>
 - Python self explained: https://medium.com/quick-code/understanding-self-in-python-a3704319e5f0
 - AngularJS docs: https://docs.angularjs.org/api
 - AngularJS bootstrapping: https://medium.com/learnwithrahul/ways-of-bootstrapping-angular-applications-d379f594f604
+- Boostrap theme guide: https://bootswatch.com/slate/
