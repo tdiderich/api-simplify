@@ -2,8 +2,9 @@
 
 from flask import Flask, jsonify, request
 from .entities.entity import Session, engine, Base
-from .entities.exam import Exam, ExamSchema
+from .entities.api_call import ApiCall, ApiCallSchema
 from flask_cors import CORS
+from .auth import AuthError, requires_auth
 
 # creating the Flask application
 app = Flask(__name__)
@@ -12,43 +13,46 @@ CORS(app)
 # if needed, generate database schema
 Base.metadata.create_all(engine)
 
+###
+# NEW FOR API CALLS
+###
 
-@app.route('/exams')
-def get_exams():
+@app.route('/apicall')
+def get_api_call():
     # fetching from the database
     session = Session()
-    exam_objects = session.query(Exam).all()
+    api_call_objects = session.query(ApiCall).all()
 
     # transforming into JSON-serializable objects
-    schema = ExamSchema(many=True)
-    exams = schema.dump(exam_objects)
+    schema = ApiCallSchema(many=True)
+    apicalls = schema.dump(api_call_objects)
 
     # serializing as JSON
     session.close()
-    return jsonify(exams.data)
+    return jsonify(apicalls.data)
 
 
-@app.route('/exams', methods=['POST'])
-@requires_auth
-def add_exam():
-    # mount exam object
-    posted_exam = ExamSchema(only=('title', 'description'))\
+@app.route('/apicall', methods=['POST'])
+# @requires_auth
+def add_api_call():
+    # mount apicall object
+    posted_api_call = ApiCallSchema(only=('name', 'endpoint', 'headers', 'parameters'))\
         .load(request.get_json())
 
-    exam = Exam(**posted_exam.data, created_by="HTTP post request")
+    apicall = ApiCall(**posted_api_call.data, created_by="HTTP post request")
 
-    # persist exam
+    # persist apicall
     session = Session()
-    session.add(exam)
+    session.add(apicall)
     session.commit()
 
-    # return created exam
-    new_exam = ExamSchema().dump(exam).data
+    # return created apicall
+    new_api_call = ApiCallSchema().dump(apicall).data
     session.close()
-    return jsonify(new_exam), 201
+    return jsonify(new_api_call), 201
 
-@app.errorhandler(AuthError)
-def handle_auth_error(ex):
-    response = jsonify(ex.error)
-    response.status_code = ex.status_code
-    return response    
+# @app.errorhandler(AuthError)
+# def handle_auth_error(ex):
+#     response = jsonify(ex.error)
+#     response.status_code = ex.status_code
+#     return response

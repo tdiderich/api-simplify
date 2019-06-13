@@ -13,10 +13,14 @@ import {AboutComponent} from './about/about.component';
 import {HomeComponent} from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 
+import {ApiCallComponent} from './apicall/apicall.component';
+import {ApiCallService} from './apicall/apicall.service';
+
 const appRoutes: Routes = [
   { path: 'callback', component: CallbackComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'apicall', component: ApiCallComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -27,6 +31,7 @@ const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     NavComponent,
+    ApiCallComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ const appRoutes: Routes = [
       appRoutes,
     ),
   ],
+  providers: [ApiCallService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -44,7 +50,7 @@ export class AppModule {
       audience: 'https://apisimplify.com.br',
       clientID: 'dAUM70DweYJySwmxruWVqx0RmjFwJdcg',
       redirectUri: 'http://localhost:4200/callback',
-      scope: 'openid profile manage:exams'
+      scope: 'openid profile manage:apicall'
     });
   }
 }

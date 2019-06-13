@@ -19,6 +19,17 @@ $ ng generate component <name>
 $ ng generate class <name>
 ```
 
+- Working with the api
+```console
+$ curl http://0.0.0.0:5000/apicall
+$ curl -X POST -H 'Content-Type: application/json' -d '{
+  "name": "Sample Name",
+  "headers": "{headers}",
+  "endpoint": "endpoint1",
+  "parameters": "parameters"
+}' http://0.0.0.0:5000/apicall
+```
+
 # Plan
 - MVP: Simple API Test + Response
 - Use case: see if you have everything right for access + get a sample without writing code)

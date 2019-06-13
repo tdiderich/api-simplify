@@ -17,13 +17,14 @@ class ApiCall(Entity, Base):
 
     def __init__(self, name, endpoint, headers, parameters, created_by):
         Entity.__init__(self, created_by)
+        self.name = name
         self.endpoint = endpoint
         self.headers = headers
-        self.name = name
         self.parameters = parameters
 
 class ApiCallSchema(Schema):
     id = fields.Number()
+    name = = fields.Str()
     endpoint = fields.Str()
     headers = fields.Str()
     parameters = fields.Str()
