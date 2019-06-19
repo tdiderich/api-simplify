@@ -7,10 +7,8 @@ import {ApiCallService} from './apicall.service';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'apicall',
-  template: `
-    <div>Loading API Call details...</div>
-  `,
+  selector: 'app-apicall',
+  templateUrl: './apicall.component.html',
 })
 export class ApiCallComponent implements OnInit, OnDestroy {
   apiCallListSubs: Subscription;

@@ -62,3 +62,5 @@ $ curl -X POST -H 'Content-Type: application/json' -d '{
 - AngularJS docs: https://docs.angularjs.org/api
 - AngularJS bootstrapping: https://medium.com/learnwithrahul/ways-of-bootstrapping-angular-applications-d379f594f604
 - Boostrap theme guide: https://bootswatch.com/slate/
+- AngularJS tour: https://angular.io/tutorial/toh-pt0
+- Basecamp for future scaling: https://basecamp.com
