@@ -13,30 +13,30 @@
         <legend>Let's test out an API...</legend>
         <div class="form-group mx-auto px-5">
           <label for="name">Name</label>
-          <textarea class="form-control" id="apiEndpoint" rows="1" aria-describedby="nameHelp"></textarea>
+          <textarea class="form-control" id="apiName" rows="1" aria-describedby="nameHelp" (keyup)="updateName($event)"></textarea>
           <small id="nameHelp" class="form-text text-muted">What should we name this for future reference?</small>
         </div>
         <div class="form-group mx-auto px-5">
           <label for="apiEndpoint">API Endpoint</label>
-          <textarea class="form-control" id="apiEndpoint" rows="1" aria-describedby="apiEndpointHelp"></textarea>
+          <textarea class="form-control" id="apiEndpoint" rows="1" aria-describedby="apiEndpointHelp" (keyup)="updateEndpoint($event)"></textarea>
           <small id="apiEndpointHelp" class="form-text text-muted">This is the URL for the API. You can use this one as an example for testing: https://community-bitcointy.p.rapidapi.com/convert/1/USD</small>
         </div>
         <div class="form-group mx-auto px-5">
           <label for="authHeaders">Authentication Headers</label>
-          <textarea class="form-control" id="authHeaders" rows="1" aria-describedby="authHeadersHelp"></textarea>
+          <textarea class="form-control" id="authHeaders" rows="1" aria-describedby="authHeadersHelp" (keyup)="updateHeaders($event)"></textarea>
           <!-- <small id="authHeadersHelp" class="form-text text-muted">The Authentication Headers are what we use in the request to Authenticate to the API. You can use these for testing: {"X-RapidAPI-Host": "community-bitcointy.p.rapidapi.com", "X-RapidAPI-Key": "957f841dc2mshd1045a90ddd01acp1de9e8jsn99cfc0c07a06"}</small> -->
         </div>
 
         <div class="form-group mx-auto px-5">
           <label for="apiParameters">Parameters</label>
-          <textarea class="form-control" id="apoiParameters" rows="1" aria-describedby="apiParametersHelp"></textarea>
+          <textarea class="form-control" id="apiParameters" rows="1" aria-describedby="apiParametersHelp" (keyup)="updateParamters($event)"></textarea>
           <small id="apiParametersHelp" class="form-text text-muted">The parameters are used to specify a query with most API call, but they are not always necessary. Our test example does not require parameters.</small>
         </div>
 
         <div class="container">
           <div class="row">
             <div class="col text-center">
-              <button type="submit" class="btn btn-primary">Test API</button>
+              <button (click)="saveApiCalls()">Test API</button>
             </div>
           </div>
         </div>
@@ -45,5 +45,4 @@
 
     </div>
   </div>
-  <app-apicall></app-apicall>
 </div>
