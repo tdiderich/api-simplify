@@ -51,6 +51,20 @@ def add_api_call():
     session.close()
     return jsonify(new_api_call), 201
 
+@app.route('/apicall/<int:api_call_id>')
+def get_specific_api_call(api_call_id):
+    # fetching from the database
+    session = Session()
+    api_call_objects = session.query(ApiCall).filter(ApiCall.id == api_call_id)
+
+    # transforming into JSON-serializable objects
+    schema = ApiCallSchema(many=True)
+    apicall = schema.dump(api_call_objects)
+
+    # serializing as JSON
+    session.close()
+    return jsonify(apicall.data)
+
 # @app.errorhandler(AuthError)
 # def handle_auth_error(ex):
 #     response = jsonify(ex.error)

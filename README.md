@@ -64,3 +64,4 @@ $ curl -X POST -H 'Content-Type: application/json' -d '{
 - Boostrap theme guide: https://bootswatch.com/slate/
 - AngularJS tour: https://angular.io/tutorial/toh-pt0
 - Basecamp for future scaling: https://basecamp.com
+- Creating API calls: https://github.com/gabelwright/Java-Grader/blob/master/__init__.py

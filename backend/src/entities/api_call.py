@@ -24,7 +24,7 @@ class ApiCall(Entity, Base):
 
 class ApiCallSchema(Schema):
     id = fields.Number()
-    name = = fields.Str()
+    name = fields.Str()
     endpoint = fields.Str()
     headers = fields.Str()
     parameters = fields.Str()
