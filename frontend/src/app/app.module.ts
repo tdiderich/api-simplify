@@ -15,12 +15,14 @@ import { NavComponent } from './nav/nav.component';
 
 import {ApiCallComponent} from './apicall/apicall.component';
 import {ApiCallService} from './apicall/apicall.service';
+import { ApicallspecificComponent } from './apicallspecific/apicallspecific.component';
 
 const appRoutes: Routes = [
   { path: 'callback', component: CallbackComponent },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'apicall', component: ApiCallComponent },
+  { path: 'apicallspecfic', component: ApicallspecificComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     HomeComponent,
     NavComponent,
     ApiCallComponent,
+    ApicallspecificComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,6 +24,13 @@ export class ApiCallService {
       .catch(ApiCallService._handleError);
   }
 
+  // GET list of public, future events
+  getSpecificApiCalls(value: number): Observable<any> {
+    return this.http
+      .get(`${API_URL}/apicall/${value}`)
+      .catch(ApiCallService._handleError);
+  }
+
   saveApiCalls(apicall: ApiCall): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
